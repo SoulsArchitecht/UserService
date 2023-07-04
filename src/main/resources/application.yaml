@@ -1,0 +1,31 @@
+server:
+  port: 8099
+
+spring:
+
+  #db settings:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/user_service?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=UTF-8
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  #flyway settings:
+  flyway:
+    create-schemas: true
+    enabled: true
+    baseline-on-migrate: true
+    user: root
+    password: root
+    url: jdbc:postgresql://localhost:5432/user_service?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=UTF-8
+    schemas: user_service
+    locations: db/migration
+    validate-migration-naming: true
+
+  #profiles
+  profiles:
+    default: dev
