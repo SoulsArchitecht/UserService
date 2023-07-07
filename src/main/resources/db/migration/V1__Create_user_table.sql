@@ -1,11 +1,9 @@
-CREATE TYPE role AS enum('USER', 'ADMIN');
-
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS user_service.users (
     id SERIAL,
     firstname varchar(255),
     lastname varchar(255),
     email varchar(255),
     birthday date,
-    role role,
+    role varchar(255),
     primary key (id)
 )
